@@ -1,13 +1,13 @@
-import os
-import gc
-import yaml
-import pandas
-import random
-import argparse
-import numpy as np
-import torch
-import wandb
-from torch.utils.data import Dataset, DataLoader
+import os          # File paths, directory creation, checkpoint saving
+import gc          # Memory management (torch.cuda.empty_cache() alternative)
+import yaml        # Config file parsing (model hyperparameters, training settings)
+import pandas      # CSV reading for your protein/TCR/MHC sequence datasets
+import random      # Random seed setting for reproducibility
+import argparse    # CLI argument parsing (train paths, config, run name, etc.)
+import numpy as np # Numerical operations, random seeding, perplexity calculation
+import torch       # Core DL framework (tensors, models, optimizers, device management)
+import wandb       # Experiment tracking (loss curves, metrics, hyperparams)
+from torch.utils.data import Dataset, DataLoader  # Custom dataset loading pipeline
 
 from transformers import LongformerConfig, LongformerForMaskedLM
 from transformers import get_linear_schedule_with_warmup
