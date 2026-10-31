@@ -9,8 +9,8 @@ import torch       # Core DL framework (tensors, models, optimizers, device mana
 import wandb       # Experiment tracking (loss curves, metrics, hyperparams)
 from torch.utils.data import Dataset, DataLoader  # Custom dataset loading pipeline
 
-from transformers import LongformerConfig, LongformerForMaskedLM
-from transformers import get_linear_schedule_with_warmup
+from transformers import EsmForMaskedLM
+model = EsmForMaskedLM.from_pretrained("facebook/esm2_t12_35M_UR50D")
 
 from data.dataloader import apply_mlm_mask_gpu   # reuse the exact masker you already use
 
